@@ -1,0 +1,40 @@
+<div>
+  <h2>Buscar Objeto por ID</h2>
+  <ion-input [(ngModel)]="id" type="number" labelPlacement="floating" placeholder="Ingrese ID"></ion-input>
+  <ion-button (click)="ObtenerID()">Buscar</ion-button>
+</div>
+
+
+<!-- <div *ngFor="let data of data"> -->
+<!-- <div *ngIf="data">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{ data.id }}</ion-card-subtitle>
+      <ion-card-title>{{ data.title }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{ data.completed }}
+    </ion-card-content>
+  </ion-card>
+  <pre>{{ data | json }}</pre>
+</div> -->
+<div *ngIf="data">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{ data.id }}</ion-card-subtitle>
+      <ion-card-title>
+        <ion-input [(ngModel)]="data.title" placeholder="Título"></ion-input>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{ data.completed }}
+    </ion-card-content>
+
+    <ion-footer>
+      <ion-button (click)="ModificarApi(data.id)">Actualizar</ion-button>
+      <ion-button (click)="createPost(data.title)">Crear</ion-button>
+    </ion-footer>
+  </ion-card>
+</div>
